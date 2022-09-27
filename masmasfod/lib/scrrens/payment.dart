@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
@@ -20,44 +21,47 @@ class Payment_page extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(MyImages.image_bg), fit: BoxFit.cover),
           ),
-          padding: const EdgeInsets.only(top: 38, left: 20),
+          padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                onTap: () {},
+                borderRadius: BorderRadius.circular(20),
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: SvgPicture.asset(
                   MyImages.icon_back,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(left: 5).r,
                 child: Text(
                   "Confirm Order",
                   style: Mystayles.BentonSansW700.copyWith(fontSize: 25),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               Container(
-                height: 145,
-                width: 370,
+                height: 145.h,
+                width: 345.h,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 0),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 0).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_FFFFFF,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                      blurRadius: 10,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -69,7 +73,8 @@ class Payment_page extends StatelessWidget {
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 20),
+                                    vertical: 0, horizontal: 20)
+                                .r,
                             child: Text(
                               "Deliver To",
                               style: Mystayles.BentonSansW100.copyWith(
@@ -77,7 +82,7 @@ class Payment_page extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: 215,
+                            width: 190.w,
                           ),
                           Container(
                             child: GradientText(
@@ -93,17 +98,17 @@ class Payment_page extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Row(
                         children: [
                           Container(
-                            height: 33,
-                            width: 66,
+                            height: 33.h,
+                            width: 66.w,
                             child: SvgPicture.asset(MyImages.pin_logo),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 10.w,
                           ),
                           Container(
                             child: Text(
@@ -111,36 +116,36 @@ class Payment_page extends StatelessWidget {
                               style: Mystayles.BentonSansW600.copyWith(
                                   fontSize: 15),
                             ),
-                            width: 280,
-                            height: 40,
+                            width: 250.w,
+                            height: 40.h,
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 120,
-                width: 370,
+                height: 120.h,
+                width: 338.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_FFFFFF,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                      blurRadius: 10,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -158,7 +163,7 @@ class Payment_page extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: 180,
+                            width: 160.w,
                           ),
                           Container(
                             child: GradientText(
@@ -174,17 +179,17 @@ class Payment_page extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Row(
                         children: [
                           Container(
-                            height: 23,
-                            width: 86,
+                            height: 23.h,
+                            width: 86.w,
                             child: Image.asset(MyImages.paypal),
                           ),
                           SizedBox(
-                            width: 91,
+                            width: 75.w,
                           ),
                           Container(
                             child: Text(
@@ -192,8 +197,8 @@ class Payment_page extends StatelessWidget {
                               style: Mystayles.BentonSansW400.copyWith(
                                   fontSize: 14),
                             ),
-                            width: 144,
-                            height: 20,
+                            width: 130.w,
+                            height: 20.h,
                           ),
                         ],
                       ),
@@ -202,14 +207,14 @@ class Payment_page extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 130,
+                height: 90.h,
               ),
               Container(
-                height: 240,
-                width: 370,
+                height: 240.h,
+                width: 338.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10).r,
+                decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(MyImages.image_bg3), fit: BoxFit.cover),
                   gradient: LinearGradient(
@@ -220,12 +225,12 @@ class Payment_page extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+                      blurRadius: 10,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -233,12 +238,12 @@ class Payment_page extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 10,
+                        height: 10.r,
                       ),
                       Row(
                         children: [
-                          const SizedBox(
-                            width: 18,
+                          SizedBox(
+                            width: 18.w,
                           ),
                           Container(
                             child: Text(
@@ -248,7 +253,7 @@ class Payment_page extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: 200,
+                            width: 180.w,
                           ),
                           Container(
                             child: Text(
@@ -260,17 +265,17 @@ class Payment_page extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        width: 20,
+                        width: 20.w,
                       ),
                       Column(
                         children: [
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Row(
                             children: [
                               SizedBox(
-                                width: 20,
+                                width: 20.w,
                               ),
                               Container(
                                 child: Text(
@@ -280,7 +285,7 @@ class Payment_page extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                width: 160,
+                                width: 143.w,
                               ),
                               Container(
                                 child: Text(
@@ -292,12 +297,12 @@ class Payment_page extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Row(
                             children: [
                               SizedBox(
-                                width: 20,
+                                width: 20.w,
                               ),
                               Container(
                                 child: Text(
@@ -307,7 +312,7 @@ class Payment_page extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                width: 215,
+                                width: 193.w,
                               ),
                               Container(
                                 child: Text(
@@ -319,12 +324,12 @@ class Payment_page extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 15,
+                            height: 15.h,
                           ),
                           Row(
                             children: [
                               SizedBox(
-                                width: 20,
+                                width: 20.w,
                               ),
                               Container(
                                 child: Text(
@@ -334,7 +339,7 @@ class Payment_page extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                width: 215,
+                                width: 193.w,
                               ),
                               Container(
                                 child: Text(
@@ -348,10 +353,10 @@ class Payment_page extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 15.h,
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       Container(
                         child: Center(
@@ -369,8 +374,8 @@ class Payment_page extends StatelessWidget {
                             Radius.circular(15),
                           ),
                         ),
-                        height: 57,
-                        width: 400,
+                        height: 57.h,
+                        width: 200.w,
                       ),
                     ],
                   ),

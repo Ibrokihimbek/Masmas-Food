@@ -2,6 +2,8 @@ class MyImages {
   //? SVG
   static const pin_logo = "assets/icons/pin.svg";
   static const icon_back = "assets/icons/back.svg";
+  static const facebook = 'assets/icons/facebook.svg';
+  static const google = 'assets/icons/google.svg';
 
   //? png
   static const image_bg = "assets/images/background.png";
@@ -18,4 +20,12 @@ class MyImages {
   static const close = "assets/images/close.png";
   static const mute = "assets/images/mute.png";
   static const image_bg3 = "assets/images/background_3.png";
+  static const board = 'assets/images/logo.png';
+  static const burger = 'assets/images/burger.png';
+  static const burger_2 = 'assets/images/burger_2.png';
+  static const person = 'assets/images/person.png';
+  static const email = 'assets/images/email.png';
+  static const block = 'assets/images/block.png';
+  static const eye = 'assets/images/eye.png';
+  static const galochka = 'assets/images/galochka.png';
 }

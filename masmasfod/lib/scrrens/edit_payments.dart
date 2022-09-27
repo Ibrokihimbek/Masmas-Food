@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:masmasfod/utils/colors.dart';
@@ -17,50 +18,53 @@ class Edit_Payments_page extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(MyImages.image_bg), fit: BoxFit.cover),
           ),
-          padding: const EdgeInsets.only(top: 38, left: 20),
+          padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                onTap: () {},
+                borderRadius: BorderRadius.circular(20),
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: SvgPicture.asset(
                   MyImages.icon_back,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(left: 5).r,
                 child: Text(
                   "Payment",
                   style: Mystayles.BentonSansW700.copyWith(fontSize: 25),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
-              const SizedBox(
-                height: 17,
+              SizedBox(
+                height: 17.h,
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 73,
-                width: 370,
+                height: 73.h,
+                width: 340.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_FFFFFF,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: MyColors.C_53E88B.withOpacity(0.1),
+                      blurRadius: 10,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -68,12 +72,12 @@ class Edit_Payments_page extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        height: 23,
-                        width: 86,
+                        height: 23.h,
+                        width: 86.w,
                         child: Image.asset(MyImages.paypal),
                       ),
                       SizedBox(
-                        width: 65,
+                        width: 50.w,
                       ),
                       Container(
                         child: Text(
@@ -81,31 +85,31 @@ class Edit_Payments_page extends StatelessWidget {
                           style:
                               Mystayles.BentonSansW400.copyWith(fontSize: 14),
                         ),
-                        width: 144,
-                        height: 20,
+                        width: 144.w,
+                        height: 20.h,
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 73,
-                width: 370,
+                height: 73.h,
+                width: 340.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_F6F6F6,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: MyColors.C_53E88B.withOpacity(0.1),
+                      blurRadius: 10,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -113,12 +117,12 @@ class Edit_Payments_page extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        height: 23,
-                        width: 86,
+                        height: 23.h,
+                        width: 86.w,
                         child: Image.asset(MyImages.visa),
                       ),
                       SizedBox(
-                        width: 65,
+                        width: 50.w,
                       ),
                       Container(
                         child: Text(
@@ -126,31 +130,31 @@ class Edit_Payments_page extends StatelessWidget {
                           style:
                               Mystayles.BentonSansW100.copyWith(fontSize: 14),
                         ),
-                        width: 144,
-                        height: 20,
+                        width: 144.w,
+                        height: 20.h,
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 73,
-                width: 370,
+                height: 73.h,
+                width: 340.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 24).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_F6F6F6,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: MyColors.C_53E88B.withOpacity(0.1),
+                      blurRadius: 10,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -158,12 +162,12 @@ class Edit_Payments_page extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        height: 23,
-                        width: 86,
+                        height: 23.h,
+                        width: 86.w,
                         child: Image.asset(MyImages.payoner),
                       ),
                       SizedBox(
-                        width: 65,
+                        width: 50.w,
                       ),
                       Container(
                         child: Text(
@@ -171,8 +175,8 @@ class Edit_Payments_page extends StatelessWidget {
                           style:
                               Mystayles.BentonSansW100.copyWith(fontSize: 14),
                         ),
-                        width: 144,
-                        height: 20,
+                        width: 144.w,
+                        height: 20.h,
                       ),
                     ],
                   ),

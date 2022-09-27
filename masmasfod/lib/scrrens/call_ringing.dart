@@ -1,5 +1,8 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:masmasfod/scrrens/payment.dart';
+import 'package:masmasfod/scrrens/payment_method_page.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
@@ -14,7 +17,11 @@ class Call_Ringing_page extends StatefulWidget {
 
 String ring = 'Ringing . . .';
 bool isMuted = false;
-Image image = Image.asset(MyImages.speaker_icon,width: 78,height: 78,);
+Image image = Image.asset(
+  MyImages.speaker_icon,
+  width: 78.w,
+  height: 70.h,
+);
 
 class _Call_Ringing_pageState extends State<Call_Ringing_page> {
   @override
@@ -27,19 +34,19 @@ class _Call_Ringing_pageState extends State<Call_Ringing_page> {
             image: DecorationImage(
                 image: AssetImage(MyImages.image_bg2), fit: BoxFit.cover),
           ),
-          padding: const EdgeInsets.only(top: 38, left: 20),
+          padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 150,
+              SizedBox(
+                height: 150.h,
               ),
               buildButton(MyImages.user_image),
-              const SizedBox(
-                height: 59,
+              SizedBox(
+                height: 59.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(left: 5).r,
                 child: Center(
                   child: Text(
                     "Richard Lewis",
@@ -47,9 +54,9 @@ class _Call_Ringing_pageState extends State<Call_Ringing_page> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Padding(
-                padding: const EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(left: 5).r,
                 child: Center(
                   child: Text(
                     ring,
@@ -57,69 +64,65 @@ class _Call_Ringing_pageState extends State<Call_Ringing_page> {
                   ),
                 ),
               ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 90,
-                        ),
-                        Center(
-                          child: ElevatedButton(
-                            onPressed: () {
-                              isMuted = !isMuted;
-                              if (isMuted) {
-                                setState(() {
-                                  ring = "15.23 Min";
-                                  image = Image.asset(
-                                    MyImages.mute,
-                                    width: 78,
-                                    height: 78,
-                                  );
-                                });
-                              } else {
-                                setState(() {
-                                  ring = "Ringing . . .";
-                                  image = Image.asset(
-                                    MyImages.speaker_icon,
-                                    width: 78,
-                                    height: 78,
-                                  );
-                                });
-                              }
-                            },
-                            child: image,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: MyColors.C_FFFFFF,
-                              shape: CircleBorder(),
-                            ),
-                          ),
-                        ),
-                        ElevatedButton(
+              Column(
+                children: [
+                  SizedBox(
+                    height: 170,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 65.w,
+                      ),
+                      Center(
+                        child: ElevatedButton(
                           onPressed: () {
-                            setState(() {
-                              ring = "Ringing cancel";
-                            });
+                            isMuted = !isMuted;
+                            if (isMuted) {
+                              setState(() {
+                                ring = "15.23 Min";
+                                image = Image.asset(
+                                  MyImages.mute,
+                                  width: 78.w,
+                                  height: 70.h,
+                                );
+                              });
+                            } else {
+                              setState(() {
+                                ring = "Ringing . . .";
+                                image = Image.asset(
+                                  MyImages.speaker_icon,
+                                  width: 78.w,
+                                  height: 70.h,
+                                );
+                              });
+                            }
                           },
-                          child: Image.asset(
-                            MyImages.close,
-                            width: 78,
-                            height: 78,
-                          ),
+                          child: image,
                           style: ElevatedButton.styleFrom(
                             backgroundColor: MyColors.C_FFFFFF,
                             shape: CircleBorder(),
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 70,
-                    )
-                  ],
-                ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Image.asset(
+                          MyImages.close,
+                          width: 78.w,
+                          height: 70.h,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: MyColors.C_FFFFFF,
+                          shape: CircleBorder(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 70.h,
+                  )
+                ],
               ),
             ],
           ),
@@ -131,11 +134,11 @@ class _Call_Ringing_pageState extends State<Call_Ringing_page> {
 
 Widget buildButton(String imageName) {
   return Container(
-    height: 162,
-    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 86),
+    height: 162.h,
+    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 86).r,
     child: Center(
       child: Container(
-        width: 172,
+        width: 172.w,
         child: Image.asset(imageName),
       ),
     ),

@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:masmasfod/scrrens/upload_preview.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 
-class Upload_Photo_page extends StatelessWidget {
+class Upload_Photo_page extends StatefulWidget {
   const Upload_Photo_page({super.key});
 
+  @override
+  State<Upload_Photo_page> createState() => _Upload_Photo_pageState();
+}
+
+class _Upload_Photo_pageState extends State<Upload_Photo_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +29,12 @@ class Upload_Photo_page extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                onTap: () {},
+                borderRadius: BorderRadius.circular(15),
+                onTap: () {
+                  Navigator.pop(
+                    context,
+                  );
+                },
                 child: SvgPicture.asset(
                   MyImages.icon_back,
                 ),
@@ -56,9 +67,41 @@ class Upload_Photo_page extends StatelessWidget {
               ),
               buildButton(MyImages.camera),
               SizedBox(
-                height: 20.h,
+                height: 195.h,
               ),
-              buildNextButton(),
+              Center(
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Upload_Preview_page(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      gradient: LinearGradient(
+                        colors: [
+                          MyColors.C_53E88B,
+                          MyColors.C_15BE77,
+                        ],
+                      ),
+                    ),
+                    height: 57,
+                    width: 157,
+                    child: Center(
+                      child: Text(
+                        "Next",
+                        style: Mystayles.BentonSansW400.copyWith(
+                            fontSize: 16, color: MyColors.C_FFFFFF),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -71,7 +114,7 @@ Widget buildButton(String imageName) {
   return Container(
     height: 129.h,
     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 86).r,
-    decoration:  BoxDecoration(
+    decoration: BoxDecoration(
       color: Colors.white,
       boxShadow: [
         BoxShadow(
@@ -79,51 +122,13 @@ Widget buildButton(String imageName) {
           offset: Offset(0, 0.4),
         ),
       ],
-      borderRadius: BorderRadius.all(
-        Radius.circular(20).r
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(20).r),
     ),
     child: Center(
       child: Container(
         height: 88.h,
         child: Image.asset(imageName),
       ),
-    ),
-  );
-}
-
-Widget buildNextButton() {
-  return Expanded(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Center(
-          child: Container(
-            height: 57.h,
-            width: 157.w,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
-                ),
-                gradient: LinearGradient(
-                  colors: [
-                    MyColors.C_53E88B,
-                    MyColors.C_15BE77,
-                  ],
-                )),
-            child: Center(
-              child: Text(
-                "Next",
-                style: Mystayles.BentonSansW400.copyWith(
-                    fontSize: 16, color: MyColors.C_FFFFFF),
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 60.h,
-        )
-      ],
     ),
   );
 }

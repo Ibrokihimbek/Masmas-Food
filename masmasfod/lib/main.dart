@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:masmasfod/scrrens/onboard_1.dart';
+import 'package:masmasfod/scrrens/onboard_2.dart';
+import 'package:masmasfod/scrrens/onboarding.dart';
 import 'scrrens/payment_method_page.dart';
 import 'scrrens/upload_photo_page.dart';
 import 'scrrens/upload_preview.dart';
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
             ),
             home: child);
       },
-      child: Upload_Photo_page(),
+      child: Onboarding_page()
     );
   }
 }
