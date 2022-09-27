@@ -2,63 +2,52 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:masmasfod/scrrens/call_ringing.dart';
+import 'package:masmasfod/scrrens/sign_up_page.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 import 'package:masmasfod/utils/gradient_text.dart';
 
-class Signup_succes_notification_page extends StatefulWidget {
-  const Signup_succes_notification_page({super.key});
+class Onboarding_2_page extends StatefulWidget {
+  const Onboarding_2_page({super.key});
 
   @override
-  State<Signup_succes_notification_page> createState() => _Signup_succes_notification_pageState();
+  State<Onboarding_2_page> createState() => _Onboarding_2_pageState();
 }
 
-class _Signup_succes_notification_pageState extends State<Signup_succes_notification_page> {
+class _Onboarding_2_pageState extends State<Onboarding_2_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.C_FEFEFF,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(MyImages.image_bg2), fit: BoxFit.cover),
-          ),
-          padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 150.h,
-              ),
-              buildButton(MyImages.illustration),
-              SizedBox(
-                height: 33.h,
-              ),
+              buildButton(MyImages.burger_2),
               Padding(
-                padding: const EdgeInsets.only(left: 5).r,
+                padding: const EdgeInsets.only(top: 38, left: 10).r,
                 child: Center(
-                  child: GradientText(
-                    'Congrats!',
-                    style: Mystayles.BentonSansW700.copyWith(fontSize: 30),
-                    gradient: const LinearGradient(
-                        colors: [MyColors.C_53E88B, MyColors.C_15BE77]),
-                  ),
-                ),
+                    child: Text(
+                  '''Food Ninja is Where Your 
+      Comfort Food Lives''',
+                  style: Mystayles.BentonSansW600.copyWith(fontSize: 28),
+                )),
               ),
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               Padding(
                 padding: const EdgeInsets.only(left: 5).r,
                 child: Center(
                   child: Text(
-                    "Your Profile Is Ready To Use",
-                    style: Mystayles.BentonSansW400.copyWith(fontSize: 23),
+                    '''Enjoy a fast and smooth food delivery 
+                    at your doorstep''',
+                    style: Mystayles.BentonSansW400.copyWith(fontSize: 18),
                   ),
                 ),
               ),
               SizedBox(
-                height: 192.r,
+                height: 42.r,
               ),
               Center(
                 child: InkWell(
@@ -67,7 +56,7 @@ class _Signup_succes_notification_pageState extends State<Signup_succes_notifica
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Call_Ringing_page(),
+                        builder: (context) => Sign_Up_Page(),
                       ),
                     );
                   },
@@ -103,14 +92,13 @@ class _Signup_succes_notification_pageState extends State<Signup_succes_notifica
 
 Widget buildButton(String imageName) {
   return Container(
-    height: 162.h,
-    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 86).r,
+    height: 470.h,
+    width: 500,
     child: Center(
       child: Container(
-        width: 172.w,
+        width: 480.w,
         child: Image.asset(imageName),
       ),
     ),
   );
 }
-

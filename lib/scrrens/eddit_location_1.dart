@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/gradient_text.dart';
 import 'package:masmasfod/utils/styles.dart';
 
-class Edit_Location_1_page extends StatelessWidget {
+class Edit_Location_1_page extends StatefulWidget {
   const Edit_Location_1_page({super.key});
 
+  @override
+  State<Edit_Location_1_page> createState() => _Edit_Location_1_pageState();
+}
+
+class _Edit_Location_1_pageState extends State<Edit_Location_1_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,44 +24,47 @@ class Edit_Location_1_page extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(MyImages.image_bg), fit: BoxFit.cover),
           ),
-          padding: const EdgeInsets.only(top: 38, left: 20),
+          padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                onTap: () {},
+                borderRadius: BorderRadius.circular(20),
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: SvgPicture.asset(
                   MyImages.icon_back,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(left: 5).r,
                 child: Text(
                   "Shipping",
                   style: Mystayles.BentonSansW700.copyWith(fontSize: 25),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 130,
-                width: 370,
+                height: 130.h,
+                width: 340.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 0),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 0).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_FFFFFF,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: MyColors.C_53E88B.withOpacity(0.1),
+                      blurRadius: 40,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -65,7 +74,7 @@ class Edit_Location_1_page extends StatelessWidget {
                     children: [
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 20).r,
                         child: Text(
                           "Order Location",
                           style:
@@ -73,17 +82,17 @@ class Edit_Location_1_page extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Row(
                         children: [
                           Container(
-                            height: 33,
-                            width: 66,
+                            height: 33.h,
+                            width: 66.r,
                             child: SvgPicture.asset(MyImages.pin_logo),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 10.w,
                           ),
                           Container(
                             child: Text(
@@ -91,8 +100,8 @@ class Edit_Location_1_page extends StatelessWidget {
                               style: Mystayles.BentonSansW600.copyWith(
                                   fontSize: 15),
                             ),
-                            width: 280,
-                            height: 40,
+                            width: 260.w,
+                            height: 40.h,
                           ),
                         ],
                       ),
@@ -100,24 +109,24 @@ class Edit_Location_1_page extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 170,
-                width: 370,
+                height: 170.h,
+                width: 340.w,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 22, horizontal: 0),
-                decoration: const BoxDecoration(
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 0).r,
+                decoration: BoxDecoration(
                   color: MyColors.C_FFFFFF,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0.4),
-                    ),
+                      color: MyColors.C_53E88B.withOpacity(0.1),
+                      blurRadius: 40,
+                    )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+                    Radius.circular(20).r,
                   ),
                 ),
                 child: Align(
@@ -127,7 +136,7 @@ class Edit_Location_1_page extends StatelessWidget {
                     children: [
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 20).r,
                         child: Text(
                           "Deliver To",
                           style:
@@ -135,17 +144,17 @@ class Edit_Location_1_page extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Row(
                         children: [
                           Container(
-                            height: 33,
-                            width: 66,
+                            height: 33.h,
+                            width: 66.w,
                             child: SvgPicture.asset(MyImages.pin_logo),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 10.w,
                           ),
                           Container(
                             child: Text(
@@ -153,17 +162,17 @@ class Edit_Location_1_page extends StatelessWidget {
                               style: Mystayles.BentonSansW600.copyWith(
                                   fontSize: 15),
                             ),
-                            width: 280,
-                            height: 40,
+                            width: 260.w,
+                            height: 40.h,
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 0, horizontal: 75),
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 75).r,
                         child: GradientText(
                           'set location',
                           style:

@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:masmasfod/scrrens/sibgnup_succes_notification.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 
-class set_location_page extends StatelessWidget {
+class set_location_page extends StatefulWidget {
   const set_location_page({super.key});
 
+  @override
+  State<set_location_page> createState() => _set_location_pageState();
+}
+
+class _set_location_pageState extends State<set_location_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,18 +24,21 @@ class set_location_page extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(MyImages.image_bg), fit: BoxFit.cover),
           ),
-          padding: const EdgeInsets.only(top: 38, left: 20),
+          padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                onTap: () {},
+                borderRadius: BorderRadius.circular(15),
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: SvgPicture.asset(
                   MyImages.icon_back,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
@@ -37,7 +47,9 @@ class set_location_page extends StatelessWidget {
                   style: Mystayles.BentonSansW400.copyWith(fontSize: 25),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: 20.h,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Text(
@@ -46,11 +58,46 @@ class set_location_page extends StatelessWidget {
                       fontWeight: FontWeight.w400),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               buildButton(MyImages.pin_logo),
-              buildNextButton(),
+              SizedBox(
+                height: 318.h,
+              ),
+              Center(
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15).r,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Signup_succes_notification_page(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      gradient: const LinearGradient(
+                        colors: [
+                          MyColors.C_53E88B,
+                          MyColors.C_15BE77,
+                        ],
+                      ),
+                    ),
+                    height: 57.h,
+                    width: 157.w,
+                    child: Center(
+                      child: Text(
+                        "Next",
+                        style: Mystayles.BentonSansW400.copyWith(
+                            fontSize: 16, color: MyColors.C_FFFFFF),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -61,10 +108,10 @@ class set_location_page extends StatelessWidget {
 
 Widget buildButton(String imageName) {
   return Container(
-    height: 147,
-    width: 370,
+    height: 147.h,
+    width: 370.w,
     padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-    decoration: const BoxDecoration(
+    decoration: BoxDecoration(
       color: MyColors.C_FFFFFF,
       boxShadow: [
         BoxShadow(
@@ -73,7 +120,7 @@ Widget buildButton(String imageName) {
         ),
       ],
       borderRadius: BorderRadius.all(
-        Radius.circular(20),
+        Radius.circular(20).r,
       ),
     ),
     child: Align(
@@ -83,12 +130,12 @@ Widget buildButton(String imageName) {
           Row(
             children: [
               Container(
-                width: 33,
-                height: 33,
+                width: 33.w,
+                height: 33.h,
                 child: SvgPicture.asset(imageName),
               ),
-              const SizedBox(
-                width: 14,
+              SizedBox(
+                width: 14.w,
               ),
               Text(
                 "Your Location",
@@ -98,65 +145,29 @@ Widget buildButton(String imageName) {
           ),
           Column(
             children: [
-              const SizedBox(
-                height: 27,
+              SizedBox(
+                height: 27.h,
               ),
               Container(
-                child:  Center(
+                child: Center(
                   child: Text(
                     "Set Location",
                     style: Mystayles.RubikW500.copyWith(fontSize: 14),
                   ),
                 ),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: MyColors.C_F6F6F6,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(15),
+                    Radius.circular(15).r,
                   ),
                 ),
-                height: 57,
-                width: 400,
+                height: 57.h,
+                width: 400.w,
               ),
             ],
           ),
         ],
       ),
-    ),
-  );
-}
-
-Widget buildNextButton() {
-  return Expanded(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Center(
-          child: Container(
-            height: 57,
-            width: 157,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
-                ),
-                gradient: LinearGradient(
-                  colors: [
-                    MyColors.C_53E88B,
-                    MyColors.C_15BE77,
-                  ],
-                )),
-            child: Center(
-              child: Text(
-                "Next",
-                style: Mystayles.BentonSansW400.copyWith(
-                    fontSize: 16, color: MyColors.C_FFFFFF),
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 60,
-        )
-      ],
     ),
   );
 }

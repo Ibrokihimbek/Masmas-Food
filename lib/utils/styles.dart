@@ -97,4 +97,9 @@ class Mystayles {
     fontSize: 12,
     fontWeight: FontWeight.w500,
   );
+  static const VigaW400 = TextStyle(
+    fontFamily: 'Viga',
+    fontSize: 12,
+    fontWeight: FontWeight.w400
+  );
 }
