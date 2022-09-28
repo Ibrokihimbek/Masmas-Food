@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:masmasfod/scrrens/Home_page.dart';
 import 'package:masmasfod/scrrens/call_ringing.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
@@ -67,7 +68,7 @@ class _Signup_succes_notification_pageState extends State<Signup_succes_notifica
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Call_Ringing_page(),
+                        builder: (context) => Home_Page(),
                       ),
                     );
                   },

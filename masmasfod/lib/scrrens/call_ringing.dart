@@ -67,7 +67,7 @@ class _Call_Ringing_pageState extends State<Call_Ringing_page> {
               Column(
                 children: [
                   SizedBox(
-                    height: 170,
+                    height: 160,
                   ),
                   Row(
                     children: [

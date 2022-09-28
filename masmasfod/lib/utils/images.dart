@@ -28,4 +28,17 @@ class MyImages {
   static const block = 'assets/images/block.png';
   static const eye = 'assets/images/eye.png';
   static const galochka = 'assets/images/galochka.png';
+  static const bell = 'assets/images/bell.png';
+  static const setting = 'assets/images/seting.png';
+  static const bg_icecream = 'assets/images/bd_icecream.png';
+  static const bg_icecream_1 = 'assets/images/bg_icecream_1.png';
+  static const image_vegan = 'assets/images/image_vegan.png';
+  static const image_menu1 = 'assets/images/image_menu1.png';
+  static const image_healthy = 'assets/images/healthy.png';
+  static const smart_resto = 'assets/images/smart_resto.png';
+  static const good_food = 'assets/images/good_food.png';
+  static const vegan_resto_1 = 'assets/images/vegan_resto_1.png';
+  static const healthy_food_1 = 'assets/images/healthy_food_1.png';
+  static const fruit_sald = 'assets/images/fruit_sald.png';
+  static const herbal = 'assets/images/herbal.png';
 }
