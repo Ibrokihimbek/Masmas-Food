@@ -6,6 +6,8 @@ import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 
+bool isDark = false;
+
 class set_location_page extends StatefulWidget {
   const set_location_page({super.key});
 
@@ -16,8 +18,10 @@ class set_location_page extends StatefulWidget {
 class _set_location_pageState extends State<set_location_page> {
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
@@ -109,15 +113,17 @@ class _set_location_pageState extends State<set_location_page> {
 Widget buildButton(String imageName) {
   return Container(
     height: 147.h,
-    width: 370.w,
+    width: 340.w,
     padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
     decoration: BoxDecoration(
-      color: MyColors.C_FFFFFF,
+      color: isDark ? MyColors.C_F4F4F4.withOpacity(0.1) : MyColors.C_FFFFFF,
       boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          offset: Offset(0, 0.4),
-        ),
+        isDark
+            ? BoxShadow()
+            : BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0, 0.4),
+              ),
       ],
       borderRadius: BorderRadius.all(
         Radius.circular(20).r,
@@ -156,13 +162,15 @@ Widget buildButton(String imageName) {
                   ),
                 ),
                 decoration: BoxDecoration(
-                  color: MyColors.C_F6F6F6,
+                  color: isDark
+                      ? MyColors.C_F4F4F4.withOpacity(0.1)
+                      : MyColors.C_F6F6F6,
                   borderRadius: BorderRadius.all(
                     Radius.circular(15).r,
                   ),
                 ),
                 height: 57.h,
-                width: 400.w,
+                width: 300.w,
               ),
             ],
           ),

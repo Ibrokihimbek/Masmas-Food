@@ -6,6 +6,8 @@ import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 
+bool isDark = false;
+
 class Upload_Preview_page extends StatefulWidget {
   const Upload_Preview_page({super.key});
 
@@ -16,11 +18,14 @@ class Upload_Preview_page extends StatefulWidget {
 class _Upload_Preview_pageState extends State<Upload_Preview_page> {
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            color: isDark ? MyColors.C_0D0D0D : MyColors.C_FEFEFF,
             image: DecorationImage(
                 image: AssetImage(MyImages.image_bg), fit: BoxFit.cover),
           ),

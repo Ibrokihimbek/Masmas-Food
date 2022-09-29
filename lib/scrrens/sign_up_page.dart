@@ -18,15 +18,21 @@ class Sign_Up_Page extends StatefulWidget {
 }
 
 class _Sign_Up_PageState extends State<Sign_Up_Page> {
+  bool isDark = false;
+
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            color: isDark ? MyColors.C_0D0D0D : MyColors.C_FEFEFF,
             image: DecorationImage(
-                image: AssetImage(MyImages.image_bg2), fit: BoxFit.cover),
+                image: AssetImage(
+                    isDark ? MyImages.image_bg_dark : MyImages.image_bg2),
+                fit: BoxFit.cover),
           ),
           // padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
@@ -79,13 +85,23 @@ class _Sign_Up_PageState extends State<Sign_Up_Page> {
                         blurRadius: 10,
                       )
                     ],
-                    color: MyColors.C_FFFFFF,
+                    color: isDark
+                        ? MyColors.C_F4F4F4.withOpacity(0.1)
+                        : MyColors.C_FFFFFF,
                   ),
                   width: 330.w,
                   height: 57.h,
-                  child: Text(
-                    'Email',
-                    style: Mystayles.BentonSansW200.copyWith(fontSize: 14),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 5).r,
+                    child: Text(
+                      'Email',
+                      style: Mystayles.BentonSansW100.copyWith(
+                        fontSize: 14,
+                        color: isDark
+                            ? MyColors.C_FFFFFF.withOpacity(0.5)
+                            : MyColors.C_09051C,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -103,13 +119,20 @@ class _Sign_Up_PageState extends State<Sign_Up_Page> {
                         blurRadius: 10,
                       )
                     ],
-                    color: MyColors.C_FFFFFF,
+                    color: isDark
+                        ? MyColors.C_F4F4F4.withOpacity(0.1)
+                        : MyColors.C_FFFFFF,
                   ),
                   width: 330.w,
                   height: 50.h,
                   child: Text(
                     'Password',
-                    style: Mystayles.BentonSansW200.copyWith(fontSize: 14),
+                    style: Mystayles.BentonSansW200.copyWith(
+                      fontSize: 14,
+                      color: isDark
+                          ? MyColors.C_FFFFFF.withOpacity(0.5)
+                          : MyColors.C_09051C,
+                    ),
                   ),
                 ),
               ),
@@ -141,7 +164,9 @@ class _Sign_Up_PageState extends State<Sign_Up_Page> {
                             blurRadius: 10,
                           )
                         ],
-                        color: MyColors.C_FFFFFF,
+                        color: isDark
+                            ? MyColors.C_F4F4F4.withOpacity(0.1)
+                            : MyColors.C_FFFFFF,
                       ),
                       width: 152.w,
                       height: 57.h,
@@ -161,7 +186,11 @@ class _Sign_Up_PageState extends State<Sign_Up_Page> {
                           Text(
                             "Facebook",
                             style: Mystayles.BentonSansBookW300.copyWith(
-                                fontSize: 14),
+                              fontSize: 14,
+                              color: isDark
+                                  ? MyColors.C_FFFFFF.withOpacity(0.5)
+                                  : MyColors.C_09051C,
+                            ),
                           )
                         ],
                       ),
@@ -181,7 +210,9 @@ class _Sign_Up_PageState extends State<Sign_Up_Page> {
                             blurRadius: 10,
                           )
                         ],
-                        color: MyColors.C_FFFFFF,
+                        color: isDark
+                            ? MyColors.C_F4F4F4.withOpacity(0.1)
+                            : MyColors.C_FFFFFF,
                       ),
                       width: 152.w,
                       height: 50.h,
@@ -201,7 +232,11 @@ class _Sign_Up_PageState extends State<Sign_Up_Page> {
                           Text(
                             "Google",
                             style: Mystayles.BentonSansBookW300.copyWith(
-                                fontSize: 14),
+                              fontSize: 14,
+                              color: isDark
+                                  ? MyColors.C_FFFFFF.withOpacity(0.5)
+                                  : MyColors.C_09051C,
+                            ),
                           )
                         ],
                       ),

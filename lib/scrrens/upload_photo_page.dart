@@ -6,6 +6,8 @@ import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 
+bool isDark = false;
+
 class Upload_Photo_page extends StatefulWidget {
   const Upload_Photo_page({super.key});
 
@@ -16,8 +18,10 @@ class Upload_Photo_page extends StatefulWidget {
 class _Upload_Photo_pageState extends State<Upload_Photo_page> {
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
@@ -115,12 +119,14 @@ Widget buildButton(String imageName) {
     height: 129.h,
     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 86).r,
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: isDark ? MyColors.C_F4F4F4.withOpacity(0.1) : MyColors.C_FFFFFF,
       boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          offset: Offset(0, 0.4),
-        ),
+        isDark
+            ? BoxShadow()
+            : BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0, 0.4),
+              ),
       ],
       borderRadius: BorderRadius.all(Radius.circular(20).r),
     ),

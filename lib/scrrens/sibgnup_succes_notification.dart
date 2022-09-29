@@ -8,23 +8,32 @@ import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 import 'package:masmasfod/utils/gradient_text.dart';
 
+bool isDark = false;
+
 class Signup_succes_notification_page extends StatefulWidget {
   const Signup_succes_notification_page({super.key});
 
   @override
-  State<Signup_succes_notification_page> createState() => _Signup_succes_notification_pageState();
+  State<Signup_succes_notification_page> createState() =>
+      _Signup_succes_notification_pageState();
 }
 
-class _Signup_succes_notification_pageState extends State<Signup_succes_notification_page> {
+class _Signup_succes_notification_pageState
+    extends State<Signup_succes_notification_page> {
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            color: isDark ? MyColors.C_0D0D0D : MyColors.C_FEFEFF,
             image: DecorationImage(
-                image: AssetImage(MyImages.image_bg2), fit: BoxFit.cover),
+                image: AssetImage(
+                    isDark ? MyImages.image_bg_dark : MyImages.image_bg2),
+                fit: BoxFit.cover),
           ),
           padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
@@ -114,4 +123,3 @@ Widget buildButton(String imageName) {
     ),
   );
 }
-

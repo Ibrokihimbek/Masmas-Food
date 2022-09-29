@@ -6,6 +6,8 @@ import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
 import 'package:masmasfod/utils/styles.dart';
 
+bool isDark = false;
+
 class Payment_Method_page extends StatefulWidget {
   const Payment_Method_page({super.key});
 
@@ -16,8 +18,10 @@ class Payment_Method_page extends StatefulWidget {
 class _Payment_Method_pageState extends State<Payment_Method_page> {
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
@@ -59,15 +63,15 @@ class _Payment_Method_pageState extends State<Payment_Method_page> {
               SizedBox(
                 height: 20.r,
               ),
-              buildButton(MyImages.paypal),
+              buildButton(isDark ? MyImages.paypal_dark : MyImages.paypal),
               SizedBox(
                 height: 17.r,
               ),
-              buildButton(MyImages.visa),
+              buildButton(isDark ? MyImages.visa_dark : MyImages.visa),
               SizedBox(
                 height: 20.r,
               ),
-              buildButton(MyImages.payoner),
+              buildButton(isDark ? MyImages.payoner_dark : MyImages.payoner),
               SizedBox(
                 height: 219.r,
               ),
@@ -115,16 +119,19 @@ class _Payment_Method_pageState extends State<Payment_Method_page> {
 Widget buildButton(String imageName) {
   return Container(
     height: 73.h,
+    width: 340.w,
     padding: const EdgeInsets.symmetric(vertical: 23, horizontal: 86).r,
-    decoration: const BoxDecoration(
-        color: Colors.white,
+    decoration: BoxDecoration(
+        color: isDark ? MyColors.C_F4F4F4.withOpacity(0.1) : MyColors.C_FFFFFF,
         boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            offset: Offset(0, 0.4),
-          ),
+          isDark
+              ? BoxShadow()
+              : BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(0, 0.4),
+                ),
         ],
-        borderRadius: BorderRadius.all(Radius.circular(20))),
+        borderRadius: const BorderRadius.all(Radius.circular(20))),
     child: Center(
       child: Container(
         height: 32.h,

@@ -41,4 +41,14 @@ class MyImages {
   static const healthy_food_1 = 'assets/images/healthy_food_1.png';
   static const fruit_sald = 'assets/images/fruit_sald.png';
   static const herbal = 'assets/images/herbal.png';
+  static const image_bg_dark = 'assets/images/image_bg_dark.png';
+  static const burger_dark = 'assets/images/burger_dark.png';
+  static const burger_2_dark = 'assets/images/burger_2_dark.png';
+  static const block_dark = 'assets/images/block_dark.png';
+  static const visa_dark = 'assets/images/visa_dark.png';
+  static const payoner_dark = 'assets/images/payoner_dark.png';
+  static const paypal_dark = 'assets/images/paypal_dark.png';
+  static const x = 'assets/images/x.png';
+  static const seting_dark = 'assets/images/seting_dark.png';
+  static const image_bg4_dark = 'assets/images/background_4_dark.png';
 }

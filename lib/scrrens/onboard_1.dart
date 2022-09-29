@@ -16,16 +16,22 @@ class Onboarding_1_page extends StatefulWidget {
 }
 
 class _Onboarding_1_pageState extends State<Onboarding_1_page> {
+  bool isDark = false;
+
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildButton(MyImages.burger),
+              buildButton(
+                isDark ? MyImages.burger_dark : MyImages.burger,
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 38, left: 10).r,
                 child: Center(

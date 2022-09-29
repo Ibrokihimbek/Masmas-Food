@@ -12,6 +12,7 @@ import 'scrrens/call_ringing.dart';
 import 'scrrens/edit_payments.dart';
 import 'scrrens/eddit_location_1.dart';
 import 'scrrens/payment.dart';
+import 'utils/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,12 +32,13 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Masmas Food',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
+            themeMode: ThemeMode.dark,
+            darkTheme: MyThemes.themeDark,
+            // darkTheme: MyThemes.themeLight,
+            theme: MyThemes.themeLight,
             home: child);
       },
-      child: Onboarding_page()
+      child: Onboarding_page(),
     );
   }
 }

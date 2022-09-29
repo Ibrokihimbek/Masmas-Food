@@ -17,9 +17,9 @@ class Onboarding_page extends StatefulWidget {
 }
 
 class _Onboarding_pageState extends State<Onboarding_page> {
+  bool isDark = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(
       const Duration(seconds: 3),
@@ -34,17 +34,21 @@ class _Onboarding_pageState extends State<Onboarding_page> {
 
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            color: isDark ? MyColors.C_0D0D0D : MyColors.C_FEFEFF,
             image: DecorationImage(
-                image: AssetImage(MyImages.image_bg2), fit: BoxFit.cover),
+              image: AssetImage(
+                  isDark ? MyImages.image_bg_dark : MyImages.image_bg2),
+              fit: BoxFit.cover,
+            ),
           ),
           padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 150.h,
