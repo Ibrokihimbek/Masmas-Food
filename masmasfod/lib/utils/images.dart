@@ -51,4 +51,6 @@ class MyImages {
   static const x = 'assets/images/x.png';
   static const seting_dark = 'assets/images/seting_dark.png';
   static const image_bg4_dark = 'assets/images/background_4_dark.png';
+  static const photo_1_dark = 'assets/images/photo_1_dark.png';
+  static const phptp_dark = 'assets/images/photo_dark.png';
 }

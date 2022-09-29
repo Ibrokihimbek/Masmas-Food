@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:masmasfod/scrrens/call_ringing.dart';
 import 'package:masmasfod/scrrens/explore.dart';
 import 'package:masmasfod/utils/colors.dart';
 import 'package:masmasfod/utils/images.dart';
@@ -90,18 +91,20 @@ class _Explore_1_PageState extends State<Explore_1_Page> {
                       ),
                       width: 267.w,
                       height: 50.h,
-                      child:  TextField(
+                      child: TextField(
                         decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.search,
                               color: isDark
-                            ? MyColors.C_FFFFFF
-                            : MyColors.C_F9A84D,
+                                  ? MyColors.C_FFFFFF
+                                  : MyColors.C_F9A84D,
                             ),
                             hintText: "What do you want to order?",
-                            hintStyle: TextStyle(color: isDark
-                                ? MyColors.C_FFFFFF
-                                : MyColors.C_F9A84D,),
+                            hintStyle: TextStyle(
+                              color: isDark
+                                  ? MyColors.C_FFFFFF
+                                  : MyColors.C_F9A84D,
+                            ),
                             border: InputBorder.none),
                       ),
                     ),
@@ -110,17 +113,29 @@ class _Explore_1_PageState extends State<Explore_1_Page> {
                     ),
                     Row(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(8).r,
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? MyColors.C_F4F4F4.withOpacity(0.1)
-                                : MyColors.C_F9A84D.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(15),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Call_Ringing_page(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(8).r,
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? MyColors.C_F4F4F4.withOpacity(0.1)
+                                  : MyColors.C_F9A84D.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            width: 49.w,
+                            height: 50.h,
+                            child: Image.asset(isDark
+                                ? MyImages.seting_dark
+                                : MyImages.setting),
                           ),
-                          width: 49.w,
-                          height: 50.h,
-                          child: Image.asset(isDark ? MyImages.seting_dark : MyImages.setting),
                         ),
                       ],
                     ),
@@ -174,7 +189,8 @@ class _Explore_1_PageState extends State<Explore_1_Page> {
         margin: const EdgeInsets.only(bottom: 10).r,
         padding: const EdgeInsets.all(12).r,
         decoration: BoxDecoration(
-          color: isDark ? MyColors.C_F4F4F4.withOpacity(0.1) : MyColors.C_FFFFFF,
+          color:
+              isDark ? MyColors.C_F4F4F4.withOpacity(0.1) : MyColors.C_FFFFFF,
           borderRadius: BorderRadius.all(Radius.circular(22)),
           boxShadow: [
             BoxShadow(

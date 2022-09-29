@@ -65,11 +65,11 @@ class _Upload_Photo_pageState extends State<Upload_Photo_page> {
               SizedBox(
                 height: 20.h,
               ),
-              buildButton(MyImages.gallery),
+              buildButton(isDark? MyImages.phptp_dark: MyImages.gallery),
               SizedBox(
                 height: 17.h,
               ),
-              buildButton(MyImages.camera),
+              buildButton(isDark? MyImages.photo_1_dark: MyImages.camera),
               SizedBox(
                 height: 195.h,
               ),

@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Masmas Food',
+            
             themeMode: ThemeMode.dark,
             darkTheme: MyThemes.themeDark,
             // darkTheme: MyThemes.themeLight,
