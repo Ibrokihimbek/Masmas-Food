@@ -18,15 +18,22 @@ class Sign_In_Page extends StatefulWidget {
 }
 
 class _Sign_In_PageState extends State<Sign_In_Page> {
+  bool isDark = false;
+
   @override
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: MyColors.C_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            color: isDark ? MyColors.C_0D0D0D : MyColors.C_FEFEFF,
             image: DecorationImage(
-                image: AssetImage(MyImages.image_bg2), fit: BoxFit.cover),
+                image: AssetImage(
+                    isDark ? MyImages.image_bg_dark : MyImages.image_bg2),
+                fit: BoxFit.cover),
           ),
           // padding: const EdgeInsets.only(top: 38, left: 20).r,
           child: Column(
@@ -84,7 +91,9 @@ class _Sign_In_PageState extends State<Sign_In_Page> {
                             blurRadius: 10,
                           )
                         ],
-                        color: MyColors.C_FFFFFF,
+                        color: isDark
+                            ? MyColors.C_F4F4F4.withOpacity(0.1)
+                            : MyColors.C_FFFFFF,
                       ),
                       width: 325.w,
                       height: 57.h,
@@ -104,7 +113,11 @@ class _Sign_In_PageState extends State<Sign_In_Page> {
                           Text(
                             "Anamwp . . |",
                             style: Mystayles.BentonSansBookW300.copyWith(
-                                fontSize: 14),
+                              fontSize: 14,
+                              color: isDark
+                                  ? MyColors.C_FFFFFF.withOpacity(0.5)
+                                  : MyColors.C_09051C,
+                            ),
                           )
                         ],
                       ),
@@ -124,7 +137,9 @@ class _Sign_In_PageState extends State<Sign_In_Page> {
                             blurRadius: 10,
                           )
                         ],
-                        color: MyColors.C_FFFFFF,
+                        color: isDark
+                            ? MyColors.C_F4F4F4.withOpacity(0.1)
+                            : MyColors.C_FFFFFF,
                       ),
                       width: 325.w,
                       height: 57.h,
@@ -144,7 +159,11 @@ class _Sign_In_PageState extends State<Sign_In_Page> {
                           Text(
                             "Email",
                             style: Mystayles.BentonSansBookW300.copyWith(
-                                fontSize: 14),
+                              fontSize: 14,
+                              color: isDark
+                                  ? MyColors.C_FFFFFF.withOpacity(0.5)
+                                  : MyColors.C_09051C,
+                            ),
                           )
                         ],
                       ),
@@ -164,7 +183,9 @@ class _Sign_In_PageState extends State<Sign_In_Page> {
                             blurRadius: 10,
                           )
                         ],
-                        color: MyColors.C_FFFFFF,
+                        color: isDark
+                            ? MyColors.C_F4F4F4.withOpacity(0.1)
+                            : MyColors.C_FFFFFF,
                       ),
                       width: 325.w,
                       height: 57.h,
@@ -184,13 +205,17 @@ class _Sign_In_PageState extends State<Sign_In_Page> {
                           Text(
                             "Password",
                             style: Mystayles.BentonSansBookW300.copyWith(
-                                fontSize: 14),
+                              fontSize: 14,
+                              color: isDark
+                                  ? MyColors.C_FFFFFF.withOpacity(0.5)
+                                  : MyColors.C_09051C,
+                            ),
                           ),
                           SizedBox(
                             width: 165.w,
                           ),
                           Container(
-                            child: Image.asset(MyImages.eye),
+                            child: Image.asset(isDark? MyImages.block_dark: MyImages.eye),
                             width: 24.w,
                             height: 24.w,
                           ),
